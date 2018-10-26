@@ -4,6 +4,10 @@ class RecipesController < ApplicationController
     @ingredients = Ingredient.all
   end
 
+  def create
+    raise params.inspect
+  end
+
   def edit
   end
 
