@@ -3,4 +3,9 @@ class Recipe < ActiveRecord::Base
   has_many :ingredients, through: :recipe_ingredients
 
   validates :name, presence: true
+
+  def all_ingredient_ids
+    self.ingredients.collect{|i| i.id}
+  end
+
 end
