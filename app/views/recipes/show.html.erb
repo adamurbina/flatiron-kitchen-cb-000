@@ -6,4 +6,4 @@
 <% end %>
 <br></br>
 
-<h3>You can make <%=Recipe.matching_recipes(@recipe.all_ingredient_ids)%> other recipes</h3>
+<h3>You can make <%=Recipe.matching_recipes(@recipe.all_ingredient_ids).count%> other recipes</h3>
