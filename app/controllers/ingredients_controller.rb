@@ -5,8 +5,12 @@ class IngredientsController < ApplicationController
 
   def create
     @ingredient = Ingredient.new(ingredient_params)
-    binding.pry
-    redirect_to ingredient_path(@ingredient)
+    if @ingredient.save
+      redirect_to ingredient_path(@ingredient)
+    else
+      redirect_to new_ingredient
+    end
+
   end
 
   def show
