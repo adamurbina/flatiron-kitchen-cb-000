@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to recipe_path(@recipe)
     else
-      redirect_to new_recipe_path
+      redirect_to new_recipe
     end
 
   end
