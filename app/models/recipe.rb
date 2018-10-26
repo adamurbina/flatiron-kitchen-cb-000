@@ -8,7 +8,7 @@ class Recipe < ActiveRecord::Base
     self.ingredients.collect{|i| i.id}
   end
 
-  def method_name
+  def self.matching_recipes(all_ingredient_ids)
     
   end
 
