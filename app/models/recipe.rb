@@ -10,9 +10,10 @@ class Recipe < ActiveRecord::Base
 
   def self.matching_recipes(recipe)
     ingredient_ids = recipe.ingredients.collect{|i| i.id}
-    self.all.select do |recipe|
+    matches = self.all.select do |recipe|
       (ingredient_id_array - recipe.all_ingredient_ids).empty?
     end
+    matches.delete!(recipe)
   end
 
 end
