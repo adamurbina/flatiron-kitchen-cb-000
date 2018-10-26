@@ -4,3 +4,6 @@
 <% @recipe.ingredients.each do |i| %>
   <%= i.name %><br>
 <% end %>
+<br></br>
+
+<h3>You can make <%=Recipe.matching_recipes(@recipe.all_ingredient_ids)%> other recipes</h3>
