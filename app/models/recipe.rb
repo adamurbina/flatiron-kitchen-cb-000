@@ -13,7 +13,7 @@ class Recipe < ActiveRecord::Base
     matches = self.all.select do |recipe|
       (ingredient_ids - recipe.all_ingredient_ids).empty?
     end
-    matches.delete!(recipe)
+    matches.delete(recipe)
   end
 
 end
