@@ -4,8 +4,8 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    @ingredient = Ingredient.find_or_create_by(params[:name])
-    redirect_to @ingredient
+    @ingredient = Ingredient.new(ingredient_params)
+    redirect_to ingredient_path(@ingredient)
   end
 
   def show
@@ -18,7 +18,7 @@ class IngredientsController < ApplicationController
   def index
   end
 
-  def ingredients_params
+  def ingredient_params
     params.require(:ingredient).permit(:name)
   end
 end
