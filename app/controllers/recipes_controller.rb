@@ -14,6 +14,10 @@ class RecipesController < ApplicationController
 
   end
 
+  def show
+    @recipe = Recipe.find(params[:id])
+  end
+
   def edit
   end
 
