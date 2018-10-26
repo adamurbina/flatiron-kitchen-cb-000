@@ -8,8 +8,10 @@ class Recipe < ActiveRecord::Base
     self.ingredients.collect{|i| i.id}
   end
 
-  def self.matching_recipes(all_ingredient_ids)
-    
+  def self.matching_recipes(ingredient_id_array)
+    self.all.select do |recipe|
+      recipe.all_ingredient_ids.include?(ingredient_id_array)
+    end
   end
 
 end
