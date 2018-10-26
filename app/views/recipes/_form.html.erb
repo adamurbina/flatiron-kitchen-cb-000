@@ -3,7 +3,7 @@
   <%= f.text_field :name %>
 
   <%= f.fields_for :ingredients do |b| %>
-    <%= b.collection_check_boxes :recipe_ids, Recipe.all, :id, :name %>
+    <%= b.collection_check_boxes :ingredients_ids, Ingredient.all, :id, :name %>
   <% end %>
 
   <%= f.submit %>
