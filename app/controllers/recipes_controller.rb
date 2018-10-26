@@ -5,7 +5,12 @@ class RecipesController < ApplicationController
   end
 
   def create
-    raise params.inspect
+    @recipe.new(recipe_params)
+    if @recipe.save
+      redirect_to recipe_path(@recipe)
+    else
+      redirect_to new_recipe_path
+    
   end
 
   def edit
