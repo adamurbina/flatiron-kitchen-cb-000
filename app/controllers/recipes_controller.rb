@@ -10,7 +10,8 @@ class RecipesController < ApplicationController
       redirect_to recipe_path(@recipe)
     else
       redirect_to new_recipe_path
-    
+    end
+
   end
 
   def edit
