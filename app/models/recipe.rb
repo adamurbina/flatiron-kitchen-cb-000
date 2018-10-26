@@ -10,7 +10,7 @@ class Recipe < ActiveRecord::Base
 
   def self.matching_recipes(ingredient_id_array)
     self.all.select do |recipe|
-      recipe.all_ingredient_ids.include?(ingredient_id_array.flat)
+      (ingredient_id_array - recipe.all_ingredient_ids).empty?
     end
   end
 
