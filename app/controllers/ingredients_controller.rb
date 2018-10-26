@@ -10,7 +10,12 @@ class IngredientsController < ApplicationController
     else
       redirect_to new_ingredient
     end
+  end
 
+  def update
+    @ingredient = Ingredient.find_by(params[:id])
+    @ingredient.update(ingredient_params)
+    redirect_to ingredient_path(@ingredient)
   end
 
   def show
