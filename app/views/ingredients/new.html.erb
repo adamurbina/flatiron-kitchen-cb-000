@@ -1,0 +1,8 @@
+<h1>Ingredients#new</h1>
+<p>Find me in app/views/ingredients/new.html.erb</p>
+
+<%= form_for @ingredient do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
