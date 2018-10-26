@@ -7,3 +7,7 @@
 <br></br>
 
 <h3>You can make <%=Recipe.matching_recipes(@recipe.all_ingredient_ids).count%> other recipes</h3>
+
+<% Recipe.matching_recipes(@recipe.all_ingredient_ids).each do |r| %>
+  <%= r.name %>
+<% end %>
