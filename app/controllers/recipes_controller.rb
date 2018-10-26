@@ -13,4 +13,8 @@ class RecipesController < ApplicationController
 
   def index
   end
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :ingredients => [])
+  end
 end
