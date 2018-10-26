@@ -8,4 +8,8 @@ class Recipe < ActiveRecord::Base
     self.ingredients.collect{|i| i.id}
   end
 
+  def method_name
+    
+  end
+
 end
